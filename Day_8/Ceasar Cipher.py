@@ -2,11 +2,11 @@
 
 logo="""
                                                                   
- ,adPPYba, ,adPPYYba,  ,adPPYba, ,adPPYba, ,adPPYYba, 8b,dPPYba,  
-a8"     "" ""     `Y8 a8P_____88 I8[    "" ""     `Y8 88P'   "Y8  
-8b         ,adPPPPP88 8PP"""""""  `"Y8ba,  ,adPPPPP88 88          
-"8a,   ,aa 88,    ,88 "8b,   ,aa aa    ]8I 88,    ,88 88          
- `"Ybbd8"' `"8bbdP"Y8  `"Ybbd8"' `"YbbdP"' `"8bbdP"Y8 88          
+ ,adPPYba, ,adPPYYba,  ,adPPYba,  ,adPPYba,  ,adPPYYba, 8b,dPPYba,  
+a8"     "" ""     `Y8 a8P_____88  I8[    ""  ""     `Y8 88P'   "Y8  
+8b         ,adPPPPP88 8PP"""""""   `"Y8ba,   ,adPPPPP88 88          
+"8a,   ,aa 88,    ,88 "8b,   ,aa  aa    ]8I  88,    ,88 88          
+ `"Ybbd8"' `"8bbdP"Y8  `"Ybbd8"'  `"YbbdP"'  `"8bbdP"Y8 88          
 
            88             88                                 
            ""             88                                 
@@ -22,13 +22,13 @@ a8"     "" 88 88P'    "8a 88P'    "8a a8P_____88 88P'   "Y8
 
 def encrypt(message,shift):
     encrypted=[]
-    for i in range(len(message)):
+    for i in range(0,len(message)):
         encrypted.append(chr(ord(message[i])+shift))
     return encrypted
 
 def decrypt(message,shift):
     decrypted=[]
-    for i in range(len(message)):
+    for i in range(0,len(message)):
         decrypted.append(chr(ord(message[i])-shift))
     return decrypted
 
@@ -38,9 +38,6 @@ def print_list(list):
 
 print(logo)
 print("Welcome to Ceasar Cipher")
-
-print(logo)
-print("Welcome to Caesar Cipher")
 
 choice = ""
 while choice != "q":
