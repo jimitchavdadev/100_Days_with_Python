@@ -1,6 +1,5 @@
 import turtle as t  # Import the turtle module
 import random  # Import the random module
-import colorgram  # Not used in this code
 
 # Create a turtle named 'jimmy' with specific attributes
 jimmy = t.Turtle()
