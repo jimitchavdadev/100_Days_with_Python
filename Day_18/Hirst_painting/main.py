@@ -1,7 +1,8 @@
-import turtle as t
-import colorgram as cg
-import random
+import turtle as t  # Import the turtle module as 't'
+import colorgram as cg  # Import the colorgram module as 'cg' for color extraction
+import random  # Import the random module for generating random colors
 
+# Define a color palette using RGB tuples
 color_pallete = [
     (253, 251, 247), (253, 248, 252), (235, 252, 243), (198, 13, 32),
     (248, 236, 25), (40, 76, 188), (244, 247, 253), (39, 216, 69),
@@ -15,28 +16,28 @@ color_pallete = [
     (243, 15, 14), (38, 43, 221)
 ]
 
-jimmy = t.Turtle()
-t.colormode(255)
+jimmy = t.Turtle()  # Create a Turtle object named 'jimmy'
+t.colormode(255)  # Set the color mode to use RGB values
 
-jimmy.penup()
-jimmy.hideturtle()
-jimmy.goto(-100, -100)
-jimmy.setheading(0)
-jimmy.speed("fastest")
+jimmy.penup()  # Lift the pen to avoid drawing lines
+jimmy.hideturtle()  # Hide the turtle icon
+jimmy.goto(-100, -100)  # Move the turtle to the starting position
+jimmy.setheading(0)  # Set the initial heading to 0 degrees (facing right)
+jimmy.speed("fastest")  # Set the drawing speed to the fastest
 
-
+# Define a function to create the Hirst painting
 def hirst():
-    for _ in range(10):
-        for _ in range(10):
-            jimmy.dot(20, random.choice(color_pallete))
-            jimmy.forward(50)
-        jimmy.setheading(90)
-        jimmy.forward(50)
-        jimmy.setheading(180)
-        jimmy.forward(500)
-        jimmy.setheading(0)
+    for _ in range(10):  # Loop to create 10 rows
+        for _ in range(10):  # Loop to create 10 dots in each row
+            jimmy.dot(20, random.choice(color_pallete))  # Draw a dot with a random color from the palette
+            jimmy.forward(50)  # Move the turtle forward by 50 units (spacing between dots)
+        jimmy.setheading(90)  # Turn the turtle 90 degrees clockwise
+        jimmy.forward(50)  # Move the turtle up by 50 units to start a new row
+        jimmy.setheading(180)  # Turn the turtle 180 degrees to face left for the next row
+        jimmy.forward(500)  # Move the turtle to the starting position of the next row
+        jimmy.setheading(0)  # Reset the turtle's heading to 0 degrees (facing right)
 
+hirst()  # Call the hirst function to create the Hirst painting
 
-hirst()
-screen = t.Screen()
-screen.exitonclick()
+screen = t.Screen()  # Create a screen object to control the turtle graphics window
+screen.exitonclick()  # Exit the program when the user clicks anywhere on the screen
