@@ -13,6 +13,7 @@ logo="""
 ██      ██ ██   ██  ██████ ██   ██ ██ ██   ████ ███████ 
 """
 
+# Menu of available drinks with their ingredients and cost
 MENU = {
     "espresso": {
         "ingredients": {
@@ -39,6 +40,7 @@ MENU = {
     }
 }
 
+# Available resources in the coffee machine
 resources = {
     "water": 300,
     "milk": 200,
@@ -46,12 +48,14 @@ resources = {
     "money": 0.0,
 }
 
+# Function to print the current resources status
 def print_report():
     print(f"Water: {resources['water']}ml")
     print(f"Milk: {resources['milk']}ml")
     print(f"Coffee: {resources['coffee']}g")
     print(f"Money: ${resources['money']}")
 
+# Function to check if there are enough resources to make the selected drink
 def check_resources(drink):
     for item in MENU[drink]["ingredients"]:
         if MENU[drink]["ingredients"][item] > resources[item]:
@@ -59,6 +63,7 @@ def check_resources(drink):
             return False
     return True
 
+# Function to process coins and calculate the total amount inserted
 def process_coins():
     print("Please insert coins.")
     quarters = int(input("How many quarters? ")) * 0.25
@@ -68,6 +73,7 @@ def process_coins():
     total = quarters + dimes + nickles + pennies
     return total
 
+# Function to check if the transaction is successful and provide change if needed
 def check_transaction(money_received, drink_cost):
     if money_received >= drink_cost:
         change = round(money_received - drink_cost, 2)
@@ -79,11 +85,13 @@ def check_transaction(money_received, drink_cost):
         print("Sorry that's not enough money. Money refunded.")
         return False
 
+# Function to make the selected drink and update resources
 def make_coffee(drink):
     for item in MENU[drink]["ingredients"]:
         resources[item] -= MENU[drink]["ingredients"][item]
     print(f"Here is your {drink}. Enjoy!")
 
+# Main function to operate the coffee machine
 def coffee_machine():
     while True:
         choice = input("What would you like? (espresso/latte/cappuccino): ").lower()
@@ -99,6 +107,6 @@ def coffee_machine():
         else:
             print("Invalid choice. Please try again.")
 
+# Start the coffee machine
 print(logo)
-
 coffee_machine()
