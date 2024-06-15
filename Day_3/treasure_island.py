@@ -1,3 +1,6 @@
+# Treasure Island Game
+
+# Print the ASCII art for the game's starting screen
 print('''
 *******************************************************************************
           |                   |                  |                     |
@@ -21,30 +24,35 @@ ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
 *******************************************************************************
 ''')
 
+# Function to handle the door choice after waiting
 def wait():
-    choice=input(("Which door? ")).lower()
-    if choice=="red":
-        print("burned by fire. game over.")
-    elif choice=="yellow":
+    # Prompt the user to choose a door and convert the input to lowercase
+    choice = input("Which door? ").lower()
+    if choice == "red":
+        print("Burned by fire. Game over.")
+    elif choice == "yellow":
         print("You Win!")
-    elif choice=="blue":
-        print("Eaten by beasts. game over.")
+    elif choice == "blue":
+        print("Eaten by beasts. Game over.")
     else:
-        print("game over.")
+        print("Game over.")
 
-
+# Function to handle the choice at the river
 def left():
-    choice=input("swim or wait? ")
-    if choice=="swim":
-        print("Attacked by a Trout. Game Over.")
-    elif choice=="wait":
+    # Prompt the user to choose between swimming or waiting
+    choice = input("Swim or wait? ").lower()
+    if choice == "swim":
+        print("Attacked by a trout. Game over.")
+    elif choice == "wait":
         wait()
-    
+
+# Print the welcome message and the mission objective
 print("Welcome to Treasure Island.")
 print("Your mission is to find the treasure.") 
 
-choice=input("You're at a cross road. Where do you want to go? Type \"left\" or \"right\": ")
-if choice=="left":
+# Prompt the user to choose a direction at the cross road
+choice = input("You're at a crossroad. Where do you want to go? Type 'left' or 'right': ").lower()
+if choice == "left":
     left()
 else:
     print("Fall into a hole. Game over.")
