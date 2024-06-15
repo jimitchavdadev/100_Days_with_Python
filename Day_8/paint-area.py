@@ -1,8 +1,10 @@
 def calc_paint(width, height, cover):
-    width=float(width)
-    height=float(height)
-    cover=float(cover)
-    ans=(width*height)/cover
+    """Calculates the amount of paint needed."""
+    width = float(width)
+    height = float(height)
+    cover = float(cover)
+    ans = (width * height) / cover
     return ans
 
-print(calc_paint(10,5,5))
+# Test the function with float arguments
+print(calc_paint(10.0, 5.0, 5.0))

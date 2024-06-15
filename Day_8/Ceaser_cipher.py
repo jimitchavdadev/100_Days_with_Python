@@ -12,31 +12,31 @@ logo="""
 print(logo)
 
 def encrypt(text, shift):
-    cipher_text=""
-    for i in range(len(text)):
-        cipher_text+=chr(ord(text[i])+int(shift))
-    
+    """Encrypts a given text using a Caesar cipher with the specified shift."""
+    cipher_text = ""
+    for char in text:
+        if char.isalpha():  # Check if the character is an alphabet
+            shifted_char = chr((ord(char) - ord('a') + shift) % 26 + ord('a'))
+            cipher_text += shifted_char if char.islower() else shifted_char.upper()  # Preserve case
+        else:
+            cipher_text += char  # Keep non-alphabetic characters unchanged
     return cipher_text
 
 def decrypt(text, shift):
-    cipher_text=""
-    for i in range(len(text)):
-        cipher_text+=chr(ord(text[i])-int(shift))
-    
-    return cipher_text
+    """Decrypts a given text using a Caesar cipher with the specified shift."""
+    return encrypt(text, -shift)  # Decrypting is essentially encrypting with negative shift
 
-while(True):
-    choice=input("Type 'encode' to encrypt and 'decode' to decrypt or any other key to exit: ")
+while True:
+    choice = input("Type 'encode' to encrypt and 'decode' to decrypt or any other key to exit: ")
 
-    if choice == "encode":
+    if choice.lower() == "encode" or choice.lower() == "decode":
         text = input("Type your message: ")
         shift = int(input("Type the shift number: "))
-        cipher_text = encrypt(text, shift)
-        print(f"The encoded text is {cipher_text}")
-    elif choice=="decode":
-        text = input("Type your message: ")
-        shift = int(input("Type the shift number: "))
-        cipher_text = decrypt(text, shift)
-        print(f"The decoded text is {cipher_text}")
+        if choice.lower() == "encode":
+            result = encrypt(text, shift)
+            print(f"The encoded text is: {result}")
+        else:
+            result = decrypt(text, shift)
+            print(f"The decoded text is: {result}")
     else:
         break
