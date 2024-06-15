@@ -1,56 +1,28 @@
-# csv to list
-
-# weather_list=[]
-# with open("weather_data.csv") as data:
-#     weather = data.readlines()
-#     weather_list.append(weather)
-#
-# print(weather_list)
-
-# extracting a column
-
-# import csv
-#
-# with open("weather_data.csv") as data_file:
-#     data = csv.reader(data_file)
-#     temparature=[]
-#     for row in data:
-#         temp = row[1]
-#         temparature.append(temp)
-
+# Importing the pandas library
 import pandas
 
+# Reading data from a CSV file into a pandas DataFrame
 data = pandas.read_csv("weather_data.csv")
+
+# Extracting a specific column ("temp") from the DataFrame and converting it to a list
 temp_list = data["temp"].to_list()
 
-
-# some statistical operations
-# avg = data["temp"].mean()
-# print(avg)
-# median = data["temp"].median()
-# print(median)
-# mode = data["temp"].mode()
-# print(mode)
-# max = data["temp"].max()
-# print(max)
-
+# Function to convert temperature from Celsius to Fahrenheit
 def c_to_f(value):
-    value = 1.8 * value + 32
+    value = 1.8 * value + 32  # Conversion formula from Celsius to Fahrenheit
     return value
 
-
-# getting a single row for some condition
-# print(data[data.day == "Monday"])
-# print(data[data.temp == data.temp.max()])
-
-# celcius to fahrenheit
+# Applying the conversion function to each value in the "temp" column (commented out in this code)
 # data["temp"] = c_to_f(data["temp"])
-# print(data["temp"])
 
+# Creating a dictionary with student names and scores
 data_dict = {
     "students": ["Amy", "James", "Angela"],
     "scores": [76, 56, 65]
 }
 
+# Creating a new DataFrame from the dictionary
 data = pandas.DataFrame(data_dict)
+
+# Saving the new DataFrame to a CSV file named "new_data.csv"
 data.to_csv("new_data.csv")
