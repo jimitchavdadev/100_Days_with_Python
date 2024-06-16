@@ -108,13 +108,6 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="/Day_32/birthday-wisher-extrahard-start/birthdays.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
         <entry key="/Day_32/birthday-wisher-hard-start/birthdays.csv">
           <value>
             <Attribute>
