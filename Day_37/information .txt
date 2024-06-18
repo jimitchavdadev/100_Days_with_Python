@@ -1,0 +1,3 @@
+use the below command in terminal, change the token (password) and username
+
+curl -X POST https://pixe.la/v1/users -d '{"token":"thisissecret", "username":"a-know", "agreeTermsOfService":"yes", "notMinor":"yes", "thanksCode":"ThisIsThanksCode"}'
