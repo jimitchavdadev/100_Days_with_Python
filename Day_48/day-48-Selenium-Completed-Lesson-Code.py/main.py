@@ -1,17 +1,13 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options
 
-# Deprecated - no longer needed
-chrome_driver_path = "/Users/philippmuellauer/Development/chromedriver"
+# Keeps Brave browser open
+brave_options = webdriver.ChromeOptions()
+brave_options.binary_location = "/usr/bin/brave-browser"
+brave_options.add_experimental_option("detach", True)
 
-# keeps chrome open
-chrome_options = webdriver.ChromeOptions()
-chrome_options.add_experimental_option("detach", True)
-
-# driver = webdriver.Chrome(executable_path=chrome_driver_path)
-# driver = webdriver.Chrome()
-driver = webdriver.Chrome(options=chrome_options)
+# Initialize the Brave browser driver
+driver = webdriver.Chrome(options=brave_options)
 
 def test_eight_components():
     driver.get("https://www.selenium.dev/selenium/web/web-form.html")
@@ -26,9 +22,8 @@ def test_eight_components():
     value = message.text
     assert value == "Received!"
 
-    # Closes Chrome
+    # Closes Brave
     # driver.quit()
     driver.close()
-
 
 test_eight_components()
