@@ -25,5 +25,3 @@ def test_eight_components():
     # Closes Brave
     # driver.quit()
     driver.close()
-
-test_eight_components()
