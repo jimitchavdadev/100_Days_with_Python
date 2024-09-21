@@ -1,9 +1,0 @@
-you have to create a bot:
-login to telegram web and search for bot father
-press start and follow the further instruction, it will give you a token at the end
-run the telegram_info.py script and it will give you various information about your bot
-you can find your chat id there in the "chat" key
-now get your bot token and chat id and store it in a .env file and load it before running further code
-
-source:
-https://gist.github.com/nafiesl/4ad622f344cd1dc3bb1ecbe468ff9f8a
